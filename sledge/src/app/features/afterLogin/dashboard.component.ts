@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Auth } from '@angular/fire/auth';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -9,10 +10,12 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) {}
-
+  constructor(private authService: AuthService, private router: Router, private auth: Auth) {}
   ngOnInit(): void {
   }
+  user = this.auth.currentUser;
+
+
 
 
   logout(): void {
@@ -21,5 +24,7 @@ export class DashboardComponent implements OnInit {
       .then(() => this.router.navigate(['/']))
       .catch(((err) => console.log(err.message)));
   }
+
+
 
 }

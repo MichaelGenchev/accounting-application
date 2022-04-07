@@ -24,6 +24,11 @@ export class LoginPageComponent implements OnInit {
   login(loginData: LoginData): void {
 
     this.authService.login(loginData)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log(user);
+      
+    })
       .then(() => this.router.navigate(['/dashboard']))
       .catch((error) => this.errorMessage = error.message)
 

@@ -10,6 +10,7 @@ import { ConfirmedValidator } from '../confirmed.validator';
 export class RegisterFormComponent implements OnInit {
 
   @Output() formData: EventEmitter<{
+    username: string;
     email: string;
     password: string;
   }> = new EventEmitter();
@@ -23,7 +24,7 @@ export class RegisterFormComponent implements OnInit {
 
       username: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
     }, {
       validator : ConfirmedValidator('password', 'confirmPassword')

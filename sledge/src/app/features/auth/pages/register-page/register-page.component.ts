@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 
 
 import { Router } from '@angular/router';
-import { LoginData } from 'src/app/core/interfaces/login-data.interface';
+import { updateProfile } from 'firebase/auth';
+import { RegisterData } from 'src/app/core/interfaces/login-data.interface';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -12,19 +14,33 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class RegisterPageComponent implements OnInit {
 
+  errorMessage: string
+
   constructor(
     private readonly authService: AuthService,
-    private readonly router: Router
+    private readonly router: Router,
+    private  auth: Auth
   ) { }
 
   ngOnInit(): void {
   }
 
 
-  register(registerData: LoginData): void {
+  register(registerData: RegisterData): void {
     this.authService.register(registerData)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        updateProfile(user, {
+          displayName: registerData.username
+        })
+        
+      })
       .then(() => this.router.navigate(['/login']))
-      .catch((error) => console.log(error.message));
+      .then(() => console.log(this.auth.currentUser))
+      .catch((error) => {
+        console.log(error.message);
+      });
 
   }
+
 }

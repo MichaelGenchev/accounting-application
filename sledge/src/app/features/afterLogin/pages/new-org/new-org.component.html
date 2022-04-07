@@ -1,0 +1,32 @@
+<div class="background">
+    <div class="login-container">
+        <div class="text-container">
+            <h1>Creating organization</h1>
+            <p>
+                Choose good name for your organization and then click the  create button
+
+            </p>
+        </div>
+        <div class="form-container">
+            <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+                <mat-form-field class="form-control">
+                    <mat-label>Organization Name</mat-label>
+                    <input matInput formControlName="organization" type="text" required />
+                    <mat-error *ngIf="organization?.hasError('required')">
+                      Name required
+                    </mat-error>
+                    <mat-error *ngIf="organization?.hasError('minlength')">
+                      Name is too short
+                    </mat-error>
+                </mat-form-field>
+                <div class="form-footer">
+                    <button [disabled]="form.invalid" mat-raised-button type="submit">
+                        Create
+                    </button>
+                </div>
+
+                
+            </form>
+        </div>
+      </div>
+</div>
