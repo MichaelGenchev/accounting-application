@@ -17,6 +17,8 @@ const routes: Routes = [
       import('./features/auth/auth.module').then((m) => m.AuthModule),
     ...canActivate(redirectLoggedInToHome),
   },
+  { path: 'main', loadChildren: () => import('./features/main/main.module').then(m => m.MainModule),
+    ...canActivate(redirectUnauthorizedToLogin) },
   {
     path: 'dashboard',
     loadChildren: () =>

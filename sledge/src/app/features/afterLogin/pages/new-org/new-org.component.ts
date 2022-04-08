@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Auth, getAuth, updateProfile, user } from '@angular/fire/auth';
 import { addDoc, Firestore, collection, getDocs  } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-org',
@@ -13,7 +14,8 @@ export class NewOrgComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private auth: Auth,
-    private firestore: Firestore
+    private firestore: Firestore,
+    private router: Router
     ) { }
     
     form : FormGroup;
@@ -44,6 +46,9 @@ export class NewOrgComponent implements OnInit {
       }
       addDoc(dbInstance, data)
       .then(() => {console.log("data sent" + this.user.displayName)})
+      .then(() => {
+        this.router.navigate(['/main'])
+      })
       .catch((err) => {console.log(err.message)});
     }
   }
