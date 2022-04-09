@@ -1,0 +1,21 @@
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div *ngFor="let org of userOrganizations">
+      <mat-card class="mat-elevation-z4">
+        <mat-card-header>
+          <mat-card-title>{{org.title}}</mat-card-title>
+          <br>
+        </mat-card-header>
+        <br>
+        <mat-card-content>
+          Budget: {{org.budget}}
+
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

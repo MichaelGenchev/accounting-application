@@ -1,10 +1,10 @@
 .background {
     align-items: center;
-    background-image: url('../../../../../assets/mountain-png-21323.png');
+    background-image: url('./../../../../../assets/mountain-png-21323.png');
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 64px);
-    background-position: bottom;
+    height: calc(100vh - 1px);
+    background-position: bottom right;
     background-size: contain;
     background-repeat: no-repeat;
     padding-top: 10%;
@@ -37,13 +37,30 @@
     justify-content: center;
     padding: 80px;
     width: 70%;
+    border: none;
   }
   
-  .text-container h1 {
+  /* .text-container h1 {
     color: #fff;
   }
   
   .text-container button {
     background-color: transparent;
     border: 1px solid #fff;
+  } */
+
+  mat-form-field {
+    width: 100%;
+    border: none;
+  }
+  form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 200px;
+    width: 300px;
+  }
+  button:hover{
+    color:#5eccd6
   }

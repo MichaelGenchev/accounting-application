@@ -13,20 +13,18 @@
                     <mat-label>Organization Name</mat-label>
                     <input matInput formControlName="organization" type="text" required />
                     <mat-error *ngIf="organization?.hasError('required')">
-                      Name required
+                        Name required
                     </mat-error>
                     <mat-error *ngIf="organization?.hasError('minlength')">
-                      Name is too short
+                        Name is too short
                     </mat-error>
                 </mat-form-field>
                 <div class="form-footer">
                     <button [disabled]="form.invalid" mat-raised-button type="submit">
                         Create
                     </button>
-                </div>
-
-                
+                </div>  
             </form>
         </div>
-      </div>
+    </div>
 </div>

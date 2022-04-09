@@ -16,6 +16,8 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MaterialModule } from './shared/material.module';
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFirestoreModule } from '@angular/fire/firestore';
 // import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -37,6 +39,9 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     provideMessaging(() => getMessaging()),
     providePerformance(() => getPerformance()),
     provideStorage(() => getStorage()),
+    MaterialModule
+
+    // FontAwesomeModule,
     // AngularFireAuthModule,
     // AngularFirestoreModule,
     // AngularFireModule
