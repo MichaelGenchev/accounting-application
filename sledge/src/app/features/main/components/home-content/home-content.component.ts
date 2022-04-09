@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
-import { collection, Firestore, getDocs } from '@angular/fire/firestore';
+import { collection, deleteDoc, doc, Firestore, getDocs } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 
 @Component({
@@ -32,11 +32,37 @@ export class HomeContentComponent implements OnInit {
 
     const dbInstance = collection(this.firestore, 'organizations')
     getDocs(dbInstance)
-    .then((response) => { this.userOrganizations =  response.docs.map((item) => {
-      return {...item.data(), id: item.id}
-    })})
-    .then(() => {return this.userOrganizations.filter((item) => item.author === this.user.uid)})
-    .then((response)=> this.userOrganizations = response)
+    .then(() => {
+      this.getData()
+    })
+    // .then((response) => { this.userOrganizations =  response.docs.map((item) => {
+    //   return {...item.data(), id: item.id}
+    // })})
+    // .then(() => {return this.userOrganizations.filter((item) => item.author === this.user.uid)})
+    // .then((response)=> this.userOrganizations = response)
+  }
+
+  getData() {
+    const dbInstance = collection(this.firestore, 'organizations');
+    getDocs(dbInstance)
+      .then((response) => {
+        this.userOrganizations = [...response.docs.map((item) => {
+          return { ...item.data(), id: item.id }
+        })]
+      })
+      .then(() => {return this.userOrganizations.filter((item) => item.author === this.user.uid)})
+      .then((response)=> this.userOrganizations = response)
+
+
+  }
+
+  deleteOrganization(id){
+    const orgToDelete = doc(this.firestore, "organizations", id)
+    deleteDoc(orgToDelete)
+    .then(() => {
+      this.getData()
+    })
+
   }
 
 }
