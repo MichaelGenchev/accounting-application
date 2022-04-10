@@ -15,6 +15,7 @@ import { OrganizationComponent } from './components/organization/organization.co
 import { BudgetItemListComponent } from './components/budget-item-list/budget-item-list.component';
 import { BudgetItemCardComponent } from './components/budget-item-list/budget-item-card/budget-item-card.component';
 import { AddItemFormComponent } from './components/add-item-form/add-item-form.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { AddItemFormComponent } from './components/add-item-form/add-item-form.c
     BudgetItemListComponent,
     BudgetItemCardComponent,
     AddItemFormComponent,
+    ContactComponent,
   ],
   imports: [
     CommonModule,

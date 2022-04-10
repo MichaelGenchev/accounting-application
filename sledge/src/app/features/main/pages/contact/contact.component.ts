@@ -1,22 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-other',
-  templateUrl: './other.component.html',
-  styleUrls: ['./other.component.css']
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css']
 })
-export class OtherComponent implements OnInit {
+export class ContactComponent implements OnInit {
+
+  sideBarOpen: boolean = true;
 
   
-  sideBarOpen: boolean = true;
-  
+
+
   constructor() { }
-  
+
   ngOnInit(): void {
   }
-  
+
   sideBarToggler(){
     this.sideBarOpen = !this.sideBarOpen;
   }
-
 }

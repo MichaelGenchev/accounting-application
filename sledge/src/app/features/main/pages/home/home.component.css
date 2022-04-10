@@ -24,9 +24,10 @@
 
 .page__box {
     min-height: 120px;
-    background: #1e293b;
+    background: #f7f7f7;
     margin: 0 -1rem;
     font-size: 36px;
+    color: black;
 
 }
 .page__content {

@@ -5,13 +5,16 @@ import { OtherComponent } from './pages/other/other.component';
 import { MainComponent } from './main.component';
 import { OrganizationComponent } from './components/organization/organization.component';
 import { AddItemFormComponent } from './components/add-item-form/add-item-form.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'other', component: OtherComponent},
+  {path: 'contact', component: ContactComponent},
   {path: ':orgId/add', component: AddItemFormComponent},
   {path: ':orgId', component: OrganizationComponent},
+
 ];
 
 @NgModule({

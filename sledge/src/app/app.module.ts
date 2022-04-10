@@ -24,7 +24,7 @@ import { MaterialModule } from './shared/material.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +39,7 @@ import { MaterialModule } from './shared/material.module';
     provideMessaging(() => getMessaging()),
     providePerformance(() => getPerformance()),
     provideStorage(() => getStorage()),
-    MaterialModule
+    MaterialModule,
 
     // FontAwesomeModule,
     // AngularFireAuthModule,
