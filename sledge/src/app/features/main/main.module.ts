@@ -16,6 +16,7 @@ import { BudgetItemListComponent } from './components/budget-item-list/budget-it
 import { BudgetItemCardComponent } from './components/budget-item-list/budget-item-card/budget-item-card.component';
 import { AddItemFormComponent } from './components/add-item-form/add-item-form.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     BudgetItemCardComponent,
     AddItemFormComponent,
     ContactComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,

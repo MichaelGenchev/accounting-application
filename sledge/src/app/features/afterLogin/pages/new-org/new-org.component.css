@@ -1,6 +1,6 @@
 .background {
     align-items: center;
-    background-image: url('./../../../../../assets/mountain-png-21323.png');
+    background-image: url('../../../../../assets/mountain-png-21323.png');
     display: flex;
     flex-direction: column;
     height: calc(100vh - 1px);
