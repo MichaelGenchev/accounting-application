@@ -25,8 +25,8 @@ export class AddItemFormComponent implements OnInit {
     ngOnInit(): void {
       this.getData()
       this.form = this.fb.group({
-        name: ['', [Validators.required, Validators.minLength(2)]],
-        description: ['', [Validators.required]],
+        name: ['', [Validators.required, Validators.minLength(3)]],
+        description: ['', [Validators.required, Validators.minLength(5)]],
         amount: ['', [Validators.required]],
         date: ['', [Validators.required]],
       });
