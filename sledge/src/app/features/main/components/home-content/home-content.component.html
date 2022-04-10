@@ -12,7 +12,7 @@
 
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>OPEN</button>
+          <button mat-button [routerLink]="['/main', org.id]">OPEN</button>
           <button mat-button (click)="deleteOrganization(org.id)">DELETE</button>
         </mat-card-actions>
       </mat-card>

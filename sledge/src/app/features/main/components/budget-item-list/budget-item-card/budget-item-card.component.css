@@ -1,0 +1,66 @@
+.root {
+    display:flex;
+    width: 500px;
+    margin-top: 20px;
+    position: relative;
+}
+.root:hover .x-icon-button{
+
+    opacity: 1;
+    transform: scale(1);
+}
+.x-icon-button {
+    position: absolute;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    background-color: #1e293b;
+    right: -17px;
+    top: -17px;
+    background-image: url('./../../../../../../assets/delete_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+    opacity: 0;
+    transform: scale(0);
+    cursor: pointer;
+}
+.x-icon-button:hover {
+    transform: scale(2);
+}
+
+.budget-item {
+    display:flex;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.budget-item:hover {
+    background-color:  #eae9ea
+}
+.name {
+    flex-grow: 1 ;
+    font-size: 33px;
+    margin-left: 5px;
+}
+.date {
+    flex-grow: 1 ;
+    font-size: 33px;
+    margin-left: 5px;
+}
+.p-name {
+    margin-bottom: 30px;
+}
+
+.amount {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 40px;
+}
+.p-amount {
+    margin-top: 20px;
+}

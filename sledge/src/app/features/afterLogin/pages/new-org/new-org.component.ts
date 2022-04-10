@@ -42,6 +42,7 @@ export class NewOrgComponent implements OnInit {
       const data = {
         title: this.form.value.organization,
         author: this.user.uid,
+        items: [],
         budget: 0
       }
       addDoc(dbInstance, data)

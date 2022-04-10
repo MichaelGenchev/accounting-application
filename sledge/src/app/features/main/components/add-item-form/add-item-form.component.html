@@ -1,0 +1,60 @@
+<div class="background">
+    <div class="login-container">
+        <div class="text-container">
+            <h1>Adding item</h1>
+            <p>
+                Choose a good name for your organization and then click the  create button
+
+            </p>
+        </div>
+        <div class="form-container">
+            <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+                <mat-form-field class="form-control">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name" type="text" required />
+                    <!-- <mat-error *ngIf="organization?.hasError('required')">
+                        Name required
+                    </mat-error>
+                    <mat-error *ngIf="organization?.hasError('minlength')">
+                        Name is too short
+                    </mat-error> -->
+                </mat-form-field>
+                <mat-form-field class="form-control">
+                    <mat-label>Description</mat-label>
+                    <input matInput formControlName="description" type="text" required />
+                    <!-- <mat-error *ngIf="organization?.hasError('required')">
+                        Name required
+                    </mat-error>
+                    <mat-error *ngIf="organization?.hasError('minlength')">
+                        Name is too short
+                    </mat-error> -->
+                </mat-form-field>
+                <mat-form-field class="form-control">
+                    <mat-label>Amount</mat-label>
+                    <input matInput formControlName="amount" type="text" required />
+                    <!-- <mat-error *ngIf="organization?.hasError('required')">
+                        Name required
+                    </mat-error>
+                    <mat-error *ngIf="organization?.hasError('minlength')">
+                        Name is too short
+                    </mat-error> -->
+                </mat-form-field>
+                <mat-form-field class="form-control">
+                    <mat-label>Date</mat-label>
+                    <input matInput formControlName="date" type="datetime-local" required />
+                    <!-- <mat-error *ngIf="organization?.hasError('required')">
+                        Name required
+                    </mat-error>
+                    <mat-error *ngIf="organization?.hasError('minlength')">
+                        Name is too short
+                    </mat-error> -->
+                </mat-form-field>
+                <div class="form-footer">
+                    <button [disabled]="" mat-raised-button type="submit">
+                        Create
+                    </button>
+                </div>  
+            </form>
+        </div>
+    </div>
+</div>

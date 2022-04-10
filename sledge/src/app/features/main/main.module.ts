@@ -11,6 +11,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { OtherComponent } from './pages/other/other.component';
 import { HomeContentComponent } from './components/home-content/home-content.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { OrganizationComponent } from './components/organization/organization.component';
+import { BudgetItemListComponent } from './components/budget-item-list/budget-item-list.component';
+import { BudgetItemCardComponent } from './components/budget-item-list/budget-item-card/budget-item-card.component';
+import { AddItemFormComponent } from './components/add-item-form/add-item-form.component';
 
 
 @NgModule({
@@ -21,6 +25,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HomeComponent,
     OtherComponent,
     HomeContentComponent,
+    OrganizationComponent,
+    BudgetItemListComponent,
+    BudgetItemCardComponent,
+    AddItemFormComponent,
   ],
   imports: [
     CommonModule,

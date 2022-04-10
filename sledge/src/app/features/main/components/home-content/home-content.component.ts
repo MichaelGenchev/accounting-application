@@ -52,8 +52,6 @@ export class HomeContentComponent implements OnInit {
       })
       .then(() => {return this.userOrganizations.filter((item) => item.author === this.user.uid)})
       .then((response)=> this.userOrganizations = response)
-
-
   }
 
   deleteOrganization(id){
