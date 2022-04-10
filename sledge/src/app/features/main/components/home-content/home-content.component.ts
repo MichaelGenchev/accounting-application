@@ -35,11 +35,7 @@ export class HomeContentComponent implements OnInit {
     .then(() => {
       this.getData()
     })
-    // .then((response) => { this.userOrganizations =  response.docs.map((item) => {
-    //   return {...item.data(), id: item.id}
-    // })})
-    // .then(() => {return this.userOrganizations.filter((item) => item.author === this.user.uid)})
-    // .then((response)=> this.userOrganizations = response)
+
   }
 
   getData() {

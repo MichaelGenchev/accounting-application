@@ -1,7 +1,7 @@
 .root {
     display:flex;
     width: 500px;
-    margin-top: 20px;
+    margin-top: 40px;
     position: relative;
 }
 .root:hover .x-icon-button{
@@ -44,12 +44,12 @@
 }
 .name {
     flex-grow: 1 ;
-    font-size: 33px;
+    font-size: 25px;
     margin-left: 5px;
 }
 .date {
     flex-grow: 1 ;
-    font-size: 33px;
+    font-size: 25px;
     margin-left: 5px;
 }
 .p-name {
@@ -59,7 +59,7 @@
 .amount {
     padding: 5px;
     border-radius: 5px;
-    font-size: 40px;
+    font-size: 25px;
 }
 .p-amount {
     margin-top: 20px;

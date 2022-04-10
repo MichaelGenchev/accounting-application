@@ -1,14 +1,14 @@
 <div class="root">
-    <div class="budget-item">
+    <div class="budget-item" (click)="onCardClick()">
         <div class="name">
-            <p class="p-name">Stoqn</p>
-            <p>Date:</p>
+            <p class="p-name">{{item.name}}</p>
+            <p>Date: {{item.date | date: 'yyyy-MM-dd hh:mm:ss'}}</p>
         </div>
 
         <div class="amount">
-            <p class="p-amount">100</p>
+            <p class="p-amount">{{item.amount}}</p>
         </div>
     </div>
 
-    <div class="x-icon-button"></div>
+    <div class="x-icon-button" (click)="onXButtonClick()"></div>
 </div>

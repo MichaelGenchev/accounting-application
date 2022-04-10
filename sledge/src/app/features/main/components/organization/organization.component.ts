@@ -18,7 +18,6 @@ export class OrganizationComponent implements OnInit {
   constructor(
     private auth: Auth,
     private firestore: Firestore,
-    private router: Router,
     private route: ActivatedRoute
     ) { }
     
@@ -53,9 +52,7 @@ export class OrganizationComponent implements OnInit {
       .then(() => {return this.userOrganizations.filter((item) => item.author === this.user.uid)})
       .then((response)=> {
         this.id = this.route.snapshot.params['orgId']
-        console.log(this.id)
         this.organization = response.find(x => x.id === this.id);
-
       })
   }
 
