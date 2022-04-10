@@ -40,8 +40,17 @@ export class BudgetItemListComponent implements OnInit {
           if (this.itemsOrganization[i] == searchedItem) {
             const dataToUpdate = doc(this.firestore, 'organizations', this.orgId)
             this.itemsOrganization.splice(i,1)
+            let budget
+            if (searchedItem.amount < 0){
+              budget = +this.currentOrganization.budget + (+searchedItem.amount * -1)
+            }
+            if (searchedItem.amount >= 0){
+              budget = +this.currentOrganization.budget - (+searchedItem.amount)
+            }
+            
             updateDoc(dataToUpdate, {
-              items: this.itemsOrganization
+              items: this.itemsOrganization,
+              budget: budget
             }).then(() => {
               console.log("updated")
               this.getData()
